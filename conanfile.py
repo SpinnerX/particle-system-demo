@@ -21,8 +21,13 @@ class StarterConanRecipe(ConanFile):
 
     # Putting all of your packages here
     def requirements(self):
-        pass
-
+        self.requires("flecs/4.0.0")
+        self.requires("tinyobjloader/2.0.0-rc10")
+        self.requires("stb/cci.20230920")
+        self.requires("imguidocking/2.0")
+        # self.requires("engine3d/1.0")
+        self.requires("engine3d/1.0@local/2.0")
+    
     def build(self):
         cmake = CMake(self)
         cmake.configure()
